@@ -6,7 +6,6 @@ namespace MyDeliveriesApp.iOS
 {
     public partial class ViewController : UIViewController
     {
-        int count = 1;
 
         public ViewController(IntPtr handle) : base(handle)
         {
@@ -16,13 +15,18 @@ namespace MyDeliveriesApp.iOS
         {
             base.ViewDidLoad();
 
-            // Perform any additional setup after loading the view, typically from a nib.
-            Button.AccessibilityIdentifier = "myButton";
-            Button.TouchUpInside += delegate
-            {
-                var title = string.Format("{0} clicks!", count++);
-                Button.SetTitle(title, UIControlState.Normal);
-            };
+            helloButton.TouchUpInside += HelloButton_TouchUpInside;
+        }
+
+        private void HelloButton_TouchUpInside(object sender, EventArgs e)
+        {
+            var alert = UIAlertController.Create("Hello", $"Hello {nameTextField.Text}", UIAlertControllerStyle.Alert);
+
+            var cancelAction = UIAlertAction.Create("Hello", UIAlertActionStyle.Cancel, null);
+
+            alert.AddAction(cancelAction);
+
+            PresentViewController(alert, true, null);
         }
 
         public override void DidReceiveMemoryWarning()
