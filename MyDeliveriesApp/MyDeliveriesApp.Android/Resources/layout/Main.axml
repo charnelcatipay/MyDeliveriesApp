@@ -8,6 +8,11 @@
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/editText1"
+        android:id="@+id/nameEditText"
         android:hint="Write your name" />
+    <Button
+        android:text="Say Hello"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/helloButton" />
 </LinearLayout>
