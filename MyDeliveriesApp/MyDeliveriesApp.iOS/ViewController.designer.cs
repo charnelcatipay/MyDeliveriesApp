@@ -16,11 +16,24 @@ namespace MyDeliveriesApp.iOS
         [Outlet]
         UIKit.UIButton Button { get; set; }
 
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UIButton helloButton { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UITextField nameTextField { get; set; }
+
         void ReleaseDesignerOutlets ()
         {
-            if (Button != null) {
-                Button.Dispose ();
-                Button = null;
+            if (helloButton != null) {
+                helloButton.Dispose ();
+                helloButton = null;
+            }
+
+            if (nameTextField != null) {
+                nameTextField.Dispose ();
+                nameTextField = null;
             }
         }
     }
